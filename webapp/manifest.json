@@ -101,9 +101,17 @@
 				"name": "employeeList",
 				"target": "employees"
 			}, {
+				"pattern": "employees/overview",
+				"name": "employeeOverview",
+				"target": ["employeeOverviewTop", "employeeOverviewContent"]
+			}, {
 				"pattern": "employees/{employeeId}",
 				"name": "employee",
 				"target": "employee"
+			}, {
+				"pattern": "employees/{employeeId}/resume:?query:",
+				"name": "employeeResume",
+				"target": "employeeResume"
 			}],
       "targets": {
         "home": {
@@ -126,7 +134,36 @@
 					"viewId": "employee",
 					"viewName": "employee.Employee",
 					"viewLevel" : 3
+				},
+				"employeeResume": {
+					"viewId": "resume",
+					"viewName": "employee.Resume",
+					"viewLevel" : 4,
+					"transition": "flip"
+				},
+				"employeeOverview": {
+					"viewId": "employeeOverview",
+					"viewPath": "navigation.view.employee.overview",
+					"viewName": "EmployeeOverview",
+					"viewLevel" : 2
+				},
+				"employeeOverviewTop": {
+					"viewId": "employeeOverviewTop",
+					"parent": "employeeOverview",
+					"viewPath": "navigation.view.employee.overview",
+					"viewName": "EmployeeOverviewTop",
+					"controlId": "EmployeeOverviewParent",
+					"controlAggregation": "content"
+				},
+				"employeeOverviewContent": {
+					"viewId": "employeeOverviewContent",
+					"parent": "employeeOverview",
+					"viewPath": "navigation.view.employee.overview",
+					"viewName": "EmployeeOverviewContent",
+					"controlId": "EmployeeOverviewParent",
+					"controlAggregation": "content"
 				}
+
       }
     }
   }
