@@ -17,16 +17,16 @@
 				>
 				<items>
 					<IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
-						<Text text="{ProductID}"/>
+						<Text text="{ProductID} {Name}"/>
 					</IconTabFilter>
 					<IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
 						<mvc:XMLView viewName="navigation.view.employee.ResumeProjects"></mvc:XMLView>
 					</IconTabFilter>
 					<IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-						<Text text=""/>
+						<Text text="{Price} {CurrencyCode}"/>
 					</IconTabFilter>
 					<IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-						<Text text=""/>
+						<Text text="{}"/>
 					</IconTabFilter>
 				</items>
 			</IconTabBar>
